@@ -1,0 +1,64 @@
+<!-- todolist/templates/viewtasks.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Tasks</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #d6f5d6; /* Light green background color */
+        }
+        .container {
+            background-color: #ffffff; /* White container background color */
+            border-radius: 10px; /* Add some rounded corners to the container */
+            padding: 20px; /* Add padding inside the container */
+            margin-top: 50px; /* Add some space from the top */
+        }
+        .task-form {
+            margin-bottom: 20px; /* Add space between form and tasks */
+        }
+        .button-container {
+            /* Center the buttons */
+            margin-top: 20px; /* Add space between the form and buttons */
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4">All Tasks</h1>
+
+        {% if tasks %}
+        <ul class="list-group">
+            {% for task in tasks %}
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    {{ task.title }}
+                    <a href="{% url 'deletetask' task.id %}" class="btn btn-danger btn-sm">Completed</a>
+                </li>
+            {% endfor %}
+            
+        </ul>
+        {% else %}
+        <h4>there is no task right now</h4>
+        <form action="{% url 'addtask' %}" method="post" class="task-form">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-primary">Add Task</button>
+        </form>
+        {% endif %}
+
+        <div class="button-container">
+            <a href="{% url 'home' %}" class="btn btn-success btn-lg">Back to home</a>
+        </div>
+
+    </div>
+
+    <!-- Bootstrap JS (Optional, for certain features) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

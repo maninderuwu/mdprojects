@@ -1,0 +1,29 @@
+nav{
+    border-bottom-left-radius: 05px;
+    border-bottom-right-radius:30px; 
+}
+.pd{
+    padding-left: 200px;
+    
+}
+
+h1{
+    padding: 10px;
+    margin: 50px; 
+   
+}
+.dset{
+    display: flex;
+    padding: 40px;
+}
+.p{
+   margin-left: 150px;
+   margin-right: 30px;
+   text-align: justify;
+   font-size: 18px;
+}
+
+.maindset{
+     padding-top: 50px;
+     
+}

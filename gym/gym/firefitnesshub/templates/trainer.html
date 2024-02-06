@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %} 
+Trainers
+{% endblock %}
+
+{% block content %}
+
+<div class="container-fluid" style="padding-top: 70px;">
+  <div class="container-fluid bg-dark" style="height: 450px; color: white; position: relative;">
+    <div style="background-image: url('{% static 'images/trainer.jpg' %}'); height: 120%; width: 102%; position: absolute; top: 0; left: 0; background-size: cover; background-position: center;"></div>
+    <h1 style="position: absolute; top: 10%; left: 50%; transform: translate(-50%, -50%);">Our Trainers</h1>
+  </div>
+</div>
+
+
+  <div class="container" style="padding-top: 90px;">
+    <h5 align="center" style="padding: 30px;">So in <b>firefitness hub</b> we got some of the good trainers, and we are sure that you will like there company</h5>
+  </div>
+
+    {% if trainers %}
+        <div class="row" style="margin-left: 50px;">
+         {% for trainer in trainers %}
+          <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+            <div class="card" style="width: 290px;">
+             <img src="{{ trainer.image.url }}" class="card-img-top" alt="{{trainer.name}}" style="width: 270px; margin:10px ;">
+             <div class="card-body">
+                <h4 class="card-title">Name: {{ trainer.name }}</h4>
+                <p class="card-text">{{ trainer.description }}</p>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+    </div>
+  {% else %}
+    <p>there are no trainers right now</p>
+  {% endif %}
+</div>
+
+{% endblock %}

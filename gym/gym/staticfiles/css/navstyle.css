@@ -1,0 +1,18 @@
+
+.navbar-nav li.nav-item a:hover {
+    color: black;
+    background-color: white;
+}
+.icon:hover {
+    transform: scale(1.2); 
+   
+}
+.logo{
+            
+    position: relative;
+    max-width: 80px;
+}
+.navbar-logo{
+    display: inline-block;
+    padding: 10px;
+}

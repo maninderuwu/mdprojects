@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="index"></div>
+    <div class="homepage-container">
+        <div class="md-cms-section col-4">
+            <h1><span class="highlight">MD</span><br> CMS</h1>
+        </div>
+        <div class="about-us-section">
+            <h2>About Us</h2>
+            <p>
+                Welcome to MD CMS, your go-to platform for managing and publishing content effortlessly.
+                Our mission is to provide a seamless experience for creating, editing, and sharing articles.
+                Feel free to explore and get started with MD CMS!
+            </p>
+        </div>
+    </div>
+
+    <section id="features" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-4" style="margin-top: 8px;"><span class="highlight" style="font-size: 35px;">Our</span> Features</h2>
+           <div style="margin-top: 40px;">
+            <div class="row" >
+                <div class="col-md-4 mb-4">
+                    <div class="card" style="border: 2px solid #007bff;; border-radius: 50px;padding: 29px; overflow: hidden;">
+                        <div class="card-body text-center">
+                            <i class="bi bi-check2-circle fs-3 mb-3 text-success"></i>
+                            <h5 class="card-title">Responsive Design</h5>
+                            <p class="card-text">Our design is user-friendly; it makes using our site easy.</p>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="col-md-4 mb-4">
+                    <div class="card" style="border: 2px solid #007bff;; border-radius: 50px;padding: 30px; overflow: hidden;">
+                        <div class="card-body text-center">
+                            <i class="bi bi-check2-circle fs-3 mb-3 text-success"></i>
+                            <h5 class="card-title">User Authorization</h5>
+                            <p class="card-text">We allow everyone to create an account, log in, and log out.</p>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="col-md-4 mb-4">
+                    <div class="card" style="border: 2px solid #007bff;; border-radius: 50px;padding: 18px; overflow: hidden;">
+                        <div class="card-body text-center">
+                            <i class="bi bi-check2-circle fs-3 mb-3 text-success"></i>
+                            <h5 class="card-title">Blog Posts</h5>
+                            <p class="card-text">You can add your blogs or articles on our page and can also read other users' posts.</p>
+                        </div>
+                    </div>
+                </div>
+            </div></div>
+        </div>
+    </section>
+    
+    <a href="{% url 'article_list' %}" class="btn btn-primary" style="margin-left: 587px; font-size: 20px; margin-bottom: 20px;">Go to articles</a>
+</div>
+
+{% endblock %}

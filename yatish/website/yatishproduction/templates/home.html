@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="carousel">
+    <img src="{% static 'yatish.png' %}" alt="image" class="carousel-image">
+    
+</div>
+<div class="container mt-5">
+  <div>
+      <h2 align="center" style="margin: 30px;"><b> Man accessories</b></h2>
+  </div>
+  {% if men %}
+  <div class="row">
+      {% for man in men %}
+      <div class="col-md-4">
+          <div class="card mb-4" style="width: 18rem;">
+              <img src="{{ man.man_images.url }}" class="card-img-top" alt="...">
+              <div class="card-body">
+                  <h5 class="card-title">{{ man.man_name }}</h5>
+                  <p class="card-text">{{ man.man_description }}</p>
+              </div>
+          </div>
+      </div>
+      {% endfor %}
+  </div>
+  {% else %}
+  <div>
+    <h2 align="center">there is no clothes available right now</h2>
+  </div>
+  {% endif %}
+</div>
+
+<!--ladies-->
+<div class="container mt-5">
+    <div>
+        <h2 align="center" style="margin: 30px;"><b> Woman accessories</b></h2>
+    </div>
+    {% if women %}
+    <div class="row">
+        {% for woman in women %}
+        <div class="col-md-4">
+            <div class="card mb-4" style="width: 18rem;">
+                <img src="{{ woman.woman_images.url }}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{ woman.woman_name }}</h5>
+                    <p class="card-text">{{ woman.woman_description }}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% else %}
+    <div>
+      <h4 align="center">there is no clothes available right now</h4>
+    </div>
+    {% endif %}
+  </div>
+
+{% endblock %}

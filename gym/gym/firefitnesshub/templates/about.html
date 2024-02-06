@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %} 
+about
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid" style="padding-top: 90px;">
+<h1 class="h1" style=" display: inline-block; color: white; background-color: #343a40; transform: skewX(-10deg); overflow: hidden;">fire fitness hub</h1></div>
+<div class="container-fluid bg-dark" style="height: 450px; color: white; position: relative;">
+  <div style="background-image: url('{% static 'images/logggo.jpg' %}'); height: 105%; width: 102%; position: absolute; top: 0; left: 0; background-size: cover; background-position: center;"></div>
+  <h1 style="position: absolute; top: 50%; left: 7%; transform: translate(-50%, -50%);">About <br><b>Us</b></h1>
+  <p style="position: absolute; top: 50%; left: 60%; transform: translate(-50%, -50%);">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Explicabo voluptatibus quas dolor natus magni eos ut excepturi at ipsum cum asperiores eaque soluta minima sit voluptas earum ex, illum, dolorem pariatur neque inventore iste molestiae voluptate similique! Voluptate, repellat vero inventore commodi reiciendis, ipsa distinctio accusamus possimus provident maiores deserunt.</p>
+</div>
+
+<h2 align="center" style="margin-top: 40px;">Some glimpse of us</h2>
+<div class="container">
+    {% if about_objects %}
+    <div class="row">
+        {% for about in about_objects %}
+         <div class="col-lg-3 col-md-4 col-sm-12 mb-4">
+           <div class="card" style="width: 300px;">
+            <img src="{{ about.image.url }}" class="card-img-top img-thumbnail" alt="{{about.name}}">
+            <div class="card-body">
+               <h4 class="card-title">Name: {{ about.name }}</h4>
+           </div>
+         </div>
+       </div>
+       {% endfor %}
+   </div>
+   {% else %}
+    <p>Gallery is unavailable right now. </p>
+  {% endif %}
+   </div>
+
+{% endblock %}

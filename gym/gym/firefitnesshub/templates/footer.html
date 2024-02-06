@@ -1,0 +1,33 @@
+
+
+{% block content %}
+<footer class="bg-dark text-light py-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-4">
+                <h4>Links</h4>
+                <ul class="list-unstyled">
+                    <li><a href="{% url 'home' %}">Home</a></li>
+                    <li><a href="{% url 'about' %}" >About</a></li>
+                    <li><a href="{% url 'trainer-profile' %}" >Trainers</a></li>
+                    <li><a href="{% url 'membership' %}" >Membership plans</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <h4>Contact Us</h4>
+                <address>
+                    <p><strong>Email:</strong>firefitnesshub@gym.com</p>
+                    <p><strong>Address:</strong> firefitnesshub, near GNE college, ludhiana</p>
+                    <p><strong>Phone:</strong> 8872932965</p>
+                </address>
+            </div>
+        </div>
+        <hr>
+        <div class="text-center">
+            <p>welcome ji.</p>
+        </div>
+    </div>
+</footer>
+
+{% endblock %}
